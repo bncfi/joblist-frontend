@@ -1,10 +1,81 @@
+:root {
+  /* Fonts */
+  --font-family: 'Source Sans Pro';
+
+  --font-h1: 50px;
+  --font-h2: 40px;
+  --font-h3: 30px;
+  --font-h4: 23px;
+
+  --line-height-h1: 67px;
+  --line-height-h2: 57px;
+  --line-height-h3: 42px;
+  --line-height-h4: 24px;
+
+  /* Colors */
+  --color-black-1: #222222;
+  
+  --color-gray-1: #333333;
+  --color-gray-2: #707070;
+  --color-gray-3: #b4b4b5;
+  --color-gray-4: #dfe1e5;
+  --color-gray-5: #f3f3f3;
+  --color-gray-6: #f6fafa;
+
+  --color-blue-1: #001e43;
+
+  --color-turquoise-1: #045062;
+  --color-turquoise-2: #367381;
+  --color-truquoise-3: #638f9a;
+  --color-turquoise-4: #01a69c;
+  --color-turquoise-5: #00c4b1;
+  --color-turquoise-6: #b9e9ca;
+  --color-turquoise-7: #e5f2f1;
+  --color-turquoise-8: #ecfffb;
+
+  --color-orange-1: #e56e00;
+  --color-orange-2: #cb6201;
+  
+  --color-yellow-1: #ffb700;
+  --color-yellow-2: #ffb800;
+
+  --color-green-1: #39a864;
+  --color-green-2: #5bd700;
+  --color-green-3: #dff7cc;
+
+  --color-red-1: #d2432e;
+  --color-red-2: #cc5e4e;
+
+  /* Assets */
+  --logo-horizontal: 'https://duunitori.imgix.net/static/web/images/logo-duunitori-rgb-horisontal-inverse.svg?auto=format';
+  --logo-vertical: 'https://duunitori.imgix.net/media/images/logos/logo-duunitori-rgb-vertical-mono.png?auto=format';
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: var(--font-h1);
+  line-height: var(--line-height-h1);
+}
+
+h2 {
+  font-size: var(--font-h2);
+  line-height: var(--line-height-h2);
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: var(--line-height-h3);
+}
+
+h1 {
+  font-size: var(--font-h4);
+  line-height: var(--line-height-h4);
 }
 
 code {
