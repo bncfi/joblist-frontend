@@ -1,6 +1,7 @@
 import './App.css'
 import jobsService from './services/jobsService'
 import { useState, useEffect } from 'react'
+import Jobslist from './components/Jobslist'
 
 function App() {
   const [jobs, setJobs] = useState([])
@@ -18,7 +19,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          <code>src/App.js</code> and save to reload.
+          <Jobslist jobs={jobs} />
         </p>
       </header>
     </div>
