@@ -1,4 +1,12 @@
-const Jobfilter = ({ jobs, searchTerms, setSearchTerms, setFilteredJobs }) => {
+const Jobfilter = ({
+  jobs,
+  searchTerms,
+  setSearchTerms,
+  filteredJobs,
+  setFilteredJobs,
+  order,
+  setOrder,
+}) => {
   const locationFilter = (job) => {
     if (searchTerms.location) {
       return (
@@ -22,7 +30,29 @@ const Jobfilter = ({ jobs, searchTerms, setSearchTerms, setFilteredJobs }) => {
 
   const handleFilter = (event) => {
     event.preventDefault()
-    setFilteredJobs(jobs.filter(searchwordFilter).filter(locationFilter))
+    setFilteredJobs(
+      jobs
+        .filter(searchwordFilter)
+        .filter(locationFilter)
+        .sort((a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted))
+    )
+  }
+
+  const handleSort = (event) => {
+    if (event.target.value === 'newest') {
+      setFilteredJobs(
+        filteredJobs.sort(
+          (a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted)
+        )
+      )
+    } else {
+      setFilteredJobs(
+        filteredJobs.sort(
+          (a, b) => Date.parse(a.date_posted) - Date.parse(b.date_posted)
+        )
+      )
+    }
+    setOrder(event.target.value)
   }
 
   return (
@@ -52,6 +82,27 @@ const Jobfilter = ({ jobs, searchTerms, setSearchTerms, setFilteredJobs }) => {
           Etsi
         </button>
       </form>
+      <div>
+        <input
+          type="radio"
+          name="options"
+          id="newfirst"
+          value="newest"
+          checked={order === 'newest'}
+          onChange={handleSort}
+        />
+        <label htmlFor="newfirst">Uusin ensin</label>
+
+        <input
+          type="radio"
+          name="options"
+          id="oldfirst"
+          value="oldest"
+          checked={order === 'oldest'}
+          onChange={handleSort}
+        />
+        <label htmlFor="oldfirst">Vanhin ensin</label>
+      </div>
     </div>
   )
 }

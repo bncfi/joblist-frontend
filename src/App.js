@@ -12,10 +12,15 @@ function App() {
     location: null,
   })
 
+  const [order, setOrder] = useState('newest')
+
   const fetchJobs = async () => {
     const jobsList = await jobsService.getAll()
-    setJobs(jobsList)
-    setFilteredJobs(jobsList)
+    const sortedJobs = jobsList.sort(
+      (a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted)
+    )
+    setJobs(sortedJobs)
+    setFilteredJobs(sortedJobs)
   }
 
   useEffect(() => {
@@ -29,7 +34,10 @@ function App() {
           jobs={jobs}
           searchTerms={searchTerms}
           setSearchTerms={setSearchTerms}
+          filteredJobs={filteredJobs}
           setFilteredJobs={setFilteredJobs}
+          order={order}
+          setOrder={setOrder}
         />
         <Jobslist filteredJobs={filteredJobs} searchTerms={searchTerms} />
       </header>
