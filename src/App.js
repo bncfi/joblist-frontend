@@ -26,7 +26,6 @@ function App() {
   useEffect(() => {
     fetchJobs()
   }, [])
-
   return (
     <div className="App">
       <header className="App-header">
