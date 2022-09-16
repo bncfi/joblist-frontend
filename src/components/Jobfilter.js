@@ -1,3 +1,5 @@
+import Filterstyle from './Filter.module.css'
+
 const Jobfilter = ({
   jobs,
   searchTerms,
@@ -36,6 +38,7 @@ const Jobfilter = ({
         .filter(locationFilter)
         .sort((a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted))
     )
+    setOrder('newest')
   }
 
   const handleSort = (event) => {
@@ -56,53 +59,64 @@ const Jobfilter = ({
   }
 
   return (
-    <div>
+    <div className={Filterstyle.container}>
       <form onSubmit={handleFilter}>
-        <div>
-          <input
-            type="text"
-            id="searchword"
-            placeholder="Etsi työpaikkaa, yritystä tai alaa"
-            onChange={({ target }) =>
-              setSearchTerms({ ...searchTerms, searchword: target.value })
-            }
-          />
+        <div className={Filterstyle.formStyle}>
+          <div className={Filterstyle.searchForm}>
+            <input
+              className={Filterstyle.inputField}
+              type="text"
+              id="searchword"
+              placeholder="Etsi työpaikkaa, yritystä tai alaa"
+              onChange={({ target }) =>
+                setSearchTerms({ ...searchTerms, searchword: target.value })
+              }
+            />
+          </div>
+          <div className={Filterstyle.locationForm}>
+            <input
+              className={Filterstyle.inputField}
+              type="text"
+              id="location"
+              placeholder="Sijainti"
+              onChange={({ target }) =>
+                setSearchTerms({ ...searchTerms, location: target.value })
+              }
+            />
+          </div>
+          <div className={Filterstyle.searchButtonDiv}>
+            <button
+              className={Filterstyle.searchButton}
+              id="submit-button"
+              type="submit"
+            >
+              Etsi
+            </button>
+          </div>
         </div>
-        <div>
-          <input
-            type="text"
-            id="location"
-            placeholder="Sijainti"
-            onChange={({ target }) =>
-              setSearchTerms({ ...searchTerms, location: target.value })
-            }
-          />
-        </div>
-        <button id="submit-button" type="submit">
-          Etsi
-        </button>
       </form>
-      <div>
-        <input
-          type="radio"
-          name="options"
-          id="newfirst"
-          value="newest"
-          checked={order === 'newest'}
-          onChange={handleSort}
-        />
-        <label htmlFor="newfirst">Uusin ensin</label>
-
-        <input
-          type="radio"
-          name="options"
-          id="oldfirst"
-          value="oldest"
-          checked={order === 'oldest'}
-          onChange={handleSort}
-        />
-        <label htmlFor="oldfirst">Vanhin ensin</label>
-      </div>
+      <button
+        className={
+          order === 'newest'
+            ? Filterstyle.buttonOrderActive
+            : Filterstyle.buttonOrder
+        }
+        onClick={handleSort}
+        value="newest"
+      >
+        Uusin ensin
+      </button>
+      <button
+        className={
+          order === 'oldest'
+            ? Filterstyle.buttonOrderActive
+            : Filterstyle.buttonOrder
+        }
+        onClick={handleSort}
+        value="oldest"
+      >
+        Vanhin ensin
+      </button>
     </div>
   )
 }

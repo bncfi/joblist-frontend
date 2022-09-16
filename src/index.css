@@ -52,30 +52,11 @@
 }
 
 body {
-  margin: 0;
+  margin: 0.5vw;
+  background-color: var(--color-gray-5);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
-  font-size: var(--font-h1);
-  line-height: var(--line-height-h1);
-}
-
-h2 {
-  font-size: var(--font-h2);
-  line-height: var(--line-height-h2);
-}
-
-h3 {
-  font-size: var(--font-h3);
-  line-height: var(--line-height-h3);
-}
-
-h1 {
-  font-size: var(--font-h4);
-  line-height: var(--line-height-h4);
 }
 
 code {

@@ -1,0 +1,62 @@
+:root {
+    /* Fonts */
+    --font-family: 'Source Sans Pro';
+  
+    --font-h1: 50px;
+    --font-h2: 40px;
+    --font-h3: 30px;
+    --font-h4: 23px;
+  
+    --line-height-h1: 67px;
+    --line-height-h2: 57px;
+    --line-height-h3: 42px;
+    --line-height-h4: 24px;
+  
+    /* Colors */
+    --color-black-1: #222222;
+    
+    --color-gray-1: #333333;
+    --color-gray-2: #707070;
+    --color-gray-3: #b4b4b5;
+    --color-gray-4: #dfe1e5;
+    --color-gray-5: #f3f3f3;
+    --color-gray-6: #f6fafa;
+  
+    --color-blue-1: #001e43;
+  
+    --color-turquoise-1: #045062;
+    --color-turquoise-2: #367381;
+    --color-truquoise-3: #638f9a;
+    --color-turquoise-4: #01a69c;
+    --color-turquoise-5: #00c4b1;
+    --color-turquoise-6: #b9e9ca;
+    --color-turquoise-7: #e5f2f1;
+    --color-turquoise-8: #ecfffb;
+}
+
+.jobDiv  {
+    min-width: 100%;
+    background-color: var(--color-gray-6);
+    text-align: left;
+    margin-bottom: 0.5vh;
+    padding: 0.3vw;
+    box-sizing: border-box;
+  }
+.jobDiv:hover {
+    background-color: var(--color-gray-6);
+    border-left: 0.3vw solid var(--color-turquoise-4);
+    margin-left: -0.3vw;
+}
+
+.jobHeading {
+    font-family: var(--font-family);
+    color: var(--color-black-1);
+    font-size: 1.3vw;
+    font-weight: bold;
+}
+
+.jobDetails {
+    font-family: var(--font-family);
+    color: var(--color-gray-2);
+    font-size: 1vw;
+}

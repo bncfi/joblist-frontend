@@ -1,0 +1,107 @@
+:root {
+    /* Fonts */
+    --font-family: 'Source Sans Pro';
+  
+    --font-h1: 50px;
+    --font-h2: 40px;
+    --font-h3: 30px;
+    --font-h4: 23px;
+  
+    --line-height-h1: 67px;
+    --line-height-h2: 57px;
+    --line-height-h3: 42px;
+    --line-height-h4: 24px;
+  
+    /* Colors */
+    --color-black-1: #222222;
+    
+    --color-gray-1: #333333;
+    --color-gray-2: #707070;
+    --color-gray-3: #b4b4b5;
+    --color-gray-4: #dfe1e5;
+    --color-gray-5: #f3f3f3;
+    --color-gray-6: #f6fafa;
+  
+    --color-blue-1: #001e43;
+  
+    --color-turquoise-1: #045062;
+    --color-turquoise-2: #367381;
+    --color-truquoise-3: #638f9a;
+    --color-turquoise-4: #01a69c;
+    --color-turquoise-5: #00c4b1;
+    --color-turquoise-6: #b9e9ca;
+    --color-turquoise-7: #e5f2f1;
+    --color-turquoise-8: #ecfffb;
+}
+
+.container {
+    width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-family);
+  font-size: 1.5vw;
+}
+
+.formStyle {
+    margin:auto;
+    display:flex;
+    width: 80%;
+    text-align:center;
+    padding: 0.5vw;
+}
+
+.searchForm {
+    width:47.5%;
+}
+
+.locationForm {
+    width:47.5%;
+}
+
+.searchButtonDiv {
+    width:5%;
+    text-align:left;
+}
+
+.searchButton {
+    height:100%;
+    border:none;
+    background-color:var(--color-turquoise-2);
+    color: white;
+
+}
+
+.inputField {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-gray-2);
+    padding: 5px;
+}
+
+.leftCorner {
+    border-radius: 25px 0px 0px 25px;
+}
+
+
+.rightCorner {
+    border-radius: 0px 25px 25px 0px;
+}
+
+.buttonOrder {
+    height:100%;
+    border:none;
+    background-color:var(--color-gray-5);
+    color:var(--color-black-1);
+}
+
+.buttonOrderActive {
+    height:100%;
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-5);
+    background-color:var(--color-turquoise-2);
+    color:var(--color-gray-5);
+}
