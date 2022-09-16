@@ -33,19 +33,6 @@
   --color-turquoise-7: #e5f2f1;
   --color-turquoise-8: #ecfffb;
 
-  --color-orange-1: #e56e00;
-  --color-orange-2: #cb6201;
-  
-  --color-yellow-1: #ffb700;
-  --color-yellow-2: #ffb800;
-
-  --color-green-1: #39a864;
-  --color-green-2: #5bd700;
-  --color-green-3: #dff7cc;
-
-  --color-red-1: #d2432e;
-  --color-red-2: #cc5e4e;
-
   /* Assets */
   --logo-horizontal: 'https://duunitori.imgix.net/static/web/images/logo-duunitori-rgb-horisontal-inverse.svg?auto=format';
   --logo-vertical: 'https://duunitori.imgix.net/media/images/logos/logo-duunitori-rgb-vertical-mono.png?auto=format';
@@ -53,6 +40,7 @@
 
 body {
   margin: 0.5vw;
+  text-align:center;
   background-color: var(--color-gray-5);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;

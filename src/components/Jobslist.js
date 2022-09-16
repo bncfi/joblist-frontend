@@ -3,12 +3,14 @@ import Jobsliststyles from './Jobslist.module.css'
 import { useState, useEffect } from 'react'
 import ReactPaginate from 'react-paginate'
 
-const Jobslist = ({ filteredJobs, searchTerms }) => {
+const Jobslist = ({ filteredJobs, jobState, setJobState }) => {
   const Jobs = ({ currentJobs }) => {
     return (
       <>
         {currentJobs &&
-          currentJobs.map((item) => <Job key={item.id} jobinfo={item} />)}
+          currentJobs.map((item) => (
+            <Job key={item.id} jobinfo={item} setJobState={setJobState} />
+          ))}
       </>
     )
   }

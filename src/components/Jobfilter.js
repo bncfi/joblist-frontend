@@ -1,14 +1,18 @@
 import Filterstyle from './Filter.module.css'
+import { useState } from 'react'
 
 const Jobfilter = ({
   jobs,
-  searchTerms,
-  setSearchTerms,
   filteredJobs,
   setFilteredJobs,
   order,
   setOrder,
 }) => {
+  const [searchTerms, setSearchTerms] = useState({
+    searchword: null,
+    location: null,
+  })
+
   const locationFilter = (job) => {
     if (searchTerms.location) {
       return (

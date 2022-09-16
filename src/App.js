@@ -3,16 +3,13 @@ import jobsService from './services/jobsService'
 import { useState, useEffect } from 'react'
 import Jobslist from './components/Jobslist'
 import Jobfilter from './components/Jobfilter'
+import Jobdetails from './components/Jobdetails'
 
 function App() {
   const [jobs, setJobs] = useState([])
   const [filteredJobs, setFilteredJobs] = useState([])
-  const [searchTerms, setSearchTerms] = useState({
-    searchword: null,
-    location: null,
-  })
-
   const [order, setOrder] = useState('newest')
+  const [jobState, setJobState] = useState(false)
 
   const fetchJobs = async () => {
     const jobsList = await jobsService.getAll()
@@ -28,18 +25,22 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <header className="App-header">
-        <Jobfilter
-          jobs={jobs}
-          searchTerms={searchTerms}
-          setSearchTerms={setSearchTerms}
+      <Jobfilter
+        jobs={jobs}
+        filteredJobs={filteredJobs}
+        setFilteredJobs={setFilteredJobs}
+        order={order}
+        setOrder={setOrder}
+      />
+      {jobState ? (
+        <Jobdetails jobState={jobState} setJobState={setJobState} />
+      ) : (
+        <Jobslist
           filteredJobs={filteredJobs}
-          setFilteredJobs={setFilteredJobs}
-          order={order}
-          setOrder={setOrder}
+          jobState={jobState}
+          setJobState={setJobState}
         />
-        <Jobslist filteredJobs={filteredJobs} searchTerms={searchTerms} />
-      </header>
+      )}
     </div>
   )
 }
