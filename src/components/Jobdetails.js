@@ -2,7 +2,12 @@ import Jobdetailstyles from './Jobdetails.module.css'
 
 const Jobdetails = ({ jobState, setJobState }) => {
   const descriptionParse = (description) => {
-    return description.split('\n').map((newString) => <p>{newString}</p>)
+    return description.split(/\n+/).map((newString) => (
+      <p>
+        {newString}
+        <br />
+      </p>
+    ))
   }
 
   const closeViewHandle = () => {
@@ -11,8 +16,9 @@ const Jobdetails = ({ jobState, setJobState }) => {
 
   return (
     <div className={Jobdetailstyles.container}>
-      <div onClick={closeViewHandle}>
+      <div className={Jobdetailstyles.backToListing} onClick={closeViewHandle}>
         &laquo;Takaisin ilmoituksiin
+        <br />
         <br />
       </div>
       <div className={Jobdetailstyles.heading}>

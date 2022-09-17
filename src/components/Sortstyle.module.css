@@ -34,30 +34,30 @@
     --color-turquoise-8: #ecfffb;
 }
 
-.jobDiv  {
-    min-width: 100%;
-    background-color: var(--color-gray-6);
-    text-align: left;
-    margin-bottom: 0.5vh;
-    padding: 0.3vw;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-.jobDiv:hover {
-    background-color: var(--color-gray-6);
-    border-left: 0.3vw solid var(--color-turquoise-4);
-    margin-left: -0.3vw;
+.container {
+    width: 100%;
+    margin-top: 0;
 }
 
-.jobHeading {
-    font-family: var(--font-family);
-    color: var(--color-black-1);
-    font-size: 1.3vw;
-    font-weight: bold;
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-family);
+  font-size: 1.5vw;
 }
 
-.jobDetails {
-    font-family: var(--font-family);
-    color: var(--color-gray-2);
-    font-size: 1vw;
+.buttonOrder {
+    height:100%;
+    border:none;
+    background-color:var(--color-gray-5);
+    color:var(--color-black-1);
+}
+
+.buttonOrderActive {
+    height:100%;
+    border-radius: 10px;
+    border: 1px solid var(--color-gray-5);
+    background-color:var(--color-turquoise-2);
+    color:var(--color-gray-5);
 }

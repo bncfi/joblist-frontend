@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+Duunitorin frontend-ennakkotehtävä
+keko.antti@gmail.com
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Toteutin frontend-tehtävän React-frameworkilla ja keskityin tehtävässä visuaalisuuteen ja käytettävyyteen. Halusin tehdä sivuston ulkoasusta mahdollisimman selkeän ja tyylikkään. Css-tyylit toteutin komponentti kohtaisilla moduuleilla. Myöskin panostin käyttökokemuksen loogisuuteen, tarkoituksenani oli luoda suoraviivainen käyttökokemus, jossa käyttäjälle tarjoiltava tieto on selkeästi ja helposti saatavilla. Paginaation/sivutuksen toteutin react-paginate kirjastolla, jossa hyödynsin dokumentaatiossa ollutta koodia, jolle tein omat tyylit. Itse koodissa panostin komponenttien loogiseen jaotteluun ja uudelleen käytettävyyteen.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Käyttöohjeet:
 
-### `npm start`
+Kloonaa tai forkkaa repository, esim. komennolla:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+git clone https://github.com/bncfi/duunitori-frontend.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Mene kloonattuun projektikansioon komennolla:
 
-### `npm test`
+cd duunitori-frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Asenna npm riippuvuudet komennolla:
 
-### `npm run build`
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Käynnistä kehitysaikainen json-serveri komennolla:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+npm run server
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Käynnistä react applikaatio komennolla:
 
-### `npm run eject`
+npm run start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Applikaatio pyörii osoitteessa:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+http://localhost:3000/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Serverin resurssit osoitteessa:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+http://localhost:3001/jobs

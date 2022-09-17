@@ -1,13 +1,7 @@
 import Filterstyle from './Filter.module.css'
 import { useState } from 'react'
 
-const Jobfilter = ({
-  jobs,
-  filteredJobs,
-  setFilteredJobs,
-  order,
-  setOrder,
-}) => {
+const Jobfilter = ({ jobs, setFilteredJobs, setOrder }) => {
   const [searchTerms, setSearchTerms] = useState({
     searchword: null,
     location: null,
@@ -43,23 +37,6 @@ const Jobfilter = ({
         .sort((a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted))
     )
     setOrder('newest')
-  }
-
-  const handleSort = (event) => {
-    if (event.target.value === 'newest') {
-      setFilteredJobs(
-        filteredJobs.sort(
-          (a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted)
-        )
-      )
-    } else {
-      setFilteredJobs(
-        filteredJobs.sort(
-          (a, b) => Date.parse(a.date_posted) - Date.parse(b.date_posted)
-        )
-      )
-    }
-    setOrder(event.target.value)
   }
 
   return (
@@ -99,28 +76,6 @@ const Jobfilter = ({
           </div>
         </div>
       </form>
-      <button
-        className={
-          order === 'newest'
-            ? Filterstyle.buttonOrderActive
-            : Filterstyle.buttonOrder
-        }
-        onClick={handleSort}
-        value="newest"
-      >
-        Uusin ensin
-      </button>
-      <button
-        className={
-          order === 'oldest'
-            ? Filterstyle.buttonOrderActive
-            : Filterstyle.buttonOrder
-        }
-        onClick={handleSort}
-        value="oldest"
-      >
-        Vanhin ensin
-      </button>
     </div>
   )
 }

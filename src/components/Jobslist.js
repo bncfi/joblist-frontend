@@ -16,21 +16,16 @@ const Jobslist = ({ filteredJobs, jobState, setJobState }) => {
   }
 
   const PaginatedJobs = ({ itemsPerPage }) => {
-    // We start with an empty list of items.
     const [currentJobs, setcurrentJobs] = useState(null)
     const [pageCount, setPageCount] = useState(0)
-    // Here we use item offsets; we could also use page offsets
-    // following the API or data you're working with.
     const [itemOffset, setItemOffset] = useState(0)
 
     useEffect(() => {
-      // Fetch items from another resources.
       const endOffset = itemOffset + itemsPerPage
       setcurrentJobs(filteredJobs.slice(itemOffset, endOffset))
       setPageCount(Math.ceil(filteredJobs.length / itemsPerPage))
     }, [itemOffset, itemsPerPage])
 
-    // Invoke when user click to request another page.
     const handlePageClick = (event) => {
       const newOffset = (event.selected * itemsPerPage) % filteredJobs.length
       setItemOffset(newOffset)
