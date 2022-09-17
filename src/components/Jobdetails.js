@@ -2,8 +2,8 @@ import Jobdetailstyles from './Jobdetails.module.css'
 
 const Jobdetails = ({ jobState, setJobState }) => {
   const descriptionParse = (description) => {
-    return description.split(/\n+/).map((newString) => (
-      <p>
+    return description.split(/\n+/).map((newString, index) => (
+      <p key={index}>
         {newString}
         <br />
       </p>
