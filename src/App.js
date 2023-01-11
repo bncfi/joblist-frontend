@@ -5,12 +5,20 @@ import Jobslist from './components/Jobslist'
 import Jobfilter from './components/Jobfilter'
 import Jobdetails from './components/Jobdetails'
 import Sort from './components/Sort'
+import { useDispatch } from 'react-redux'
+import { initializeJobs } from './reducers/jobsReducer'
 
 function App() {
   const [jobs, setJobs] = useState([])
   const [filteredJobs, setFilteredJobs] = useState([])
   const [order, setOrder] = useState('newest')
   const [jobState, setJobState] = useState(false)
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(initializeJobs())
+  }, [dispatch])
 
   const fetchJobs = async () => {
     const jobsList = await jobsService.getAll()
