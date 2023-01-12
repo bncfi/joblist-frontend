@@ -5,7 +5,7 @@ import Jobslist from './components/Jobslist'
 import Jobfilter from './components/Jobfilter'
 import Jobdetails from './components/Jobdetails'
 import Sort from './components/Sort'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { initializeJobs } from './reducers/jobsReducer'
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
   const [jobState, setJobState] = useState(false)
 
   const dispatch = useDispatch()
+  const jobsRedux = useSelector((state) => state.jobs)
 
   useEffect(() => {
     dispatch(initializeJobs())
