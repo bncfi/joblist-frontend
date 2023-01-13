@@ -1,5 +1,4 @@
 import './App.css'
-import jobsService from './services/jobsService'
 import { useState, useEffect } from 'react'
 import Jobslist from './components/Jobslist'
 import Jobfilter from './components/Jobfilter'
@@ -7,32 +6,24 @@ import Jobdetails from './components/Jobdetails'
 import Sort from './components/Sort'
 import { useDispatch, useSelector } from 'react-redux'
 import { initializeJobs } from './reducers/jobsReducer'
+import { setFilteredJobs } from './reducers/filteredjobsReducer'
 
 function App() {
-  const [jobs, setJobs] = useState([])
-  const [filteredJobs, setFilteredJobs] = useState([])
   const [order, setOrder] = useState('newest')
   const [jobState, setJobState] = useState(false)
 
   const dispatch = useDispatch()
-  const jobsRedux = useSelector((state) => state.jobs)
+  const jobs = useSelector((state) => state.jobs)
+  const filteredJobs = useSelector((state) => state.filteredJobs)
 
   useEffect(() => {
     dispatch(initializeJobs())
   }, [dispatch])
 
-  const fetchJobs = async () => {
-    const jobsList = await jobsService.getAll()
-    const sortedJobs = jobsList.sort(
-      (a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted)
-    )
-    setJobs(sortedJobs)
-    setFilteredJobs(sortedJobs)
-  }
-
   useEffect(() => {
-    fetchJobs()
-  }, [])
+    dispatch(setFilteredJobs(jobs))
+  }, [dispatch, jobs])
+
   return (
     <div className="App">
       <div className="App-headerblock">

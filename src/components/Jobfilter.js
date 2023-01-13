@@ -1,11 +1,16 @@
 import Filterstyle from './Filter.module.css'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { setFilteredJobs } from '../reducers/filteredjobsReducer'
+import { useDispatch } from 'react-redux'
 
-const Jobfilter = ({ jobs, setFilteredJobs, setOrder }) => {
+const Jobfilter = ({ setOrder }) => {
   const [searchTerms, setSearchTerms] = useState({
     searchword: null,
     location: null,
   })
+  const jobs = useSelector((state) => state.jobs)
+  const dispatch = useDispatch()
 
   const locationFilter = (job) => {
     if (searchTerms.location) {
@@ -30,11 +35,9 @@ const Jobfilter = ({ jobs, setFilteredJobs, setOrder }) => {
 
   const handleFilter = (event) => {
     event.preventDefault()
-    setFilteredJobs(
-      jobs
-        .filter(searchwordFilter)
-        .filter(locationFilter)
-        .sort((a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted))
+
+    dispatch(
+      setFilteredJobs(jobs.filter(searchwordFilter).filter(locationFilter))
     )
     setOrder('newest')
   }

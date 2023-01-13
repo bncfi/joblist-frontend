@@ -1,9 +1,13 @@
 import Job from './Job'
 import Jobsliststyles from './Jobslist.module.css'
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import ReactPaginate from 'react-paginate'
+import Paginatedjobs from './Paginatedjobs'
 
-const Jobslist = ({ filteredJobs, jobState, setJobState }) => {
+const Jobslist = ({ jobState, setJobState }) => {
+  const filteredJobs = useSelector((state) => state.filteredJobs)
+  /*
   const Jobs = ({ currentJobs }) => {
     return (
       <>
@@ -22,12 +26,12 @@ const Jobslist = ({ filteredJobs, jobState, setJobState }) => {
 
     useEffect(() => {
       const endOffset = itemOffset + itemsPerPage
-      setcurrentJobs(filteredJobs.slice(itemOffset, endOffset))
-      setPageCount(Math.ceil(filteredJobs.length / itemsPerPage))
+      setcurrentJobs(allJobs.slice(itemOffset, endOffset))
+      setPageCount(Math.ceil(allJobs.length / itemsPerPage))
     }, [itemOffset, itemsPerPage])
 
     const handlePageClick = (event) => {
-      const newOffset = (event.selected * itemsPerPage) % filteredJobs.length
+      const newOffset = (event.selected * itemsPerPage) % allJobs.length
       setItemOffset(newOffset)
     }
 
@@ -49,11 +53,12 @@ const Jobslist = ({ filteredJobs, jobState, setJobState }) => {
       </>
     )
   }
+  */
 
   return (
     <div className={Jobsliststyles.container}>
       <h2>Haulla löytyi {filteredJobs.length} tulosta.</h2>
-      <PaginatedJobs itemsPerPage={15} />
+      <Paginatedjobs itemsPerPage={15} setJobState={setJobState} />
     </div>
   )
 }

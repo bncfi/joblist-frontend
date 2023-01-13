@@ -5,10 +5,16 @@ import App from './App'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import jobsReducer from './reducers/jobsReducer'
+import orderReducer from './reducers/orderReducer'
+import jobstateReducer from './reducers/jobstateReducer'
+import filteredjobsReducer from './reducers/filteredjobsReducer'
 
 const store = configureStore({
   reducer: {
     jobs: jobsReducer,
+    order: orderReducer,
+    jobState: jobstateReducer,
+    filteredJobs: filteredjobsReducer,
   },
 })
 
