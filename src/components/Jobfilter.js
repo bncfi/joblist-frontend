@@ -1,10 +1,10 @@
 import Filterstyle from './Filter.module.css'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
 import { setFilteredJobs } from '../reducers/filteredjobsReducer'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { setOrder } from '../reducers/orderReducer'
 
-const Jobfilter = ({ setOrder }) => {
+const Jobfilter = () => {
   const [searchTerms, setSearchTerms] = useState({
     searchword: null,
     location: null,
@@ -39,7 +39,7 @@ const Jobfilter = ({ setOrder }) => {
     dispatch(
       setFilteredJobs(jobs.filter(searchwordFilter).filter(locationFilter))
     )
-    setOrder('newest')
+    dispatch(setOrder('newest'))
   }
 
   return (

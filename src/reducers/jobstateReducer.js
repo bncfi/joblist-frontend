@@ -1,17 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const jobState = createSlice({
-  name: 'filteredjobs',
+  name: 'jobState',
   initialState: false,
   reducers: {
-    setJobstate(state, action) {
-      return action.payload.sort(
-        (a, b) => Date.parse(b.date_posted) - Date.parse(a.date_posted)
-      )
+    setJobState(state, action) {
+      return action.payload
     },
   },
 })
 
-export const { setJobstate } = jobState.actions
+export const { setJobState } = jobState.actions
 
 export default jobState.reducer

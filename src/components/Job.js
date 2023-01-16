@@ -1,6 +1,10 @@
 import Jobstyles from './Job.module.css'
+import { useDispatch } from 'react-redux'
+import { setJobState } from '../reducers/jobstateReducer'
 
-const Job = ({ jobinfo, setJobState }) => {
+const Job = ({ jobinfo }) => {
+  const dispatch = useDispatch()
+
   const dateParser = (dateString) => {
     const dateWithDash = dateString.split(' ', 1)
     const dateWithoutDash = dateWithDash[0].split('-')
@@ -10,7 +14,7 @@ const Job = ({ jobinfo, setJobState }) => {
   }
 
   const jobDetailsHandle = (jobDetails) => {
-    setJobState(jobDetails)
+    dispatch(setJobState(jobDetails))
   }
 
   return (

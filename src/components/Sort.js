@@ -1,12 +1,14 @@
 import Sortstyle from './Sortstyle.module.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   orderFilteredNewest,
   orderFilteredOldest,
 } from '../reducers/filteredjobsReducer'
+import { setOrder } from '../reducers/orderReducer'
 
-const Sort = ({ setOrder, order, filteredJobs, setFilteredJobs }) => {
+const Sort = () => {
   const dispatch = useDispatch()
+  const order = useSelector((state) => state.order)
 
   const handleSort = (event) => {
     if (event.target.value === 'newest') {
@@ -14,7 +16,7 @@ const Sort = ({ setOrder, order, filteredJobs, setFilteredJobs }) => {
     } else {
       dispatch(orderFilteredOldest())
     }
-    setOrder(event.target.value)
+    dispatch(setOrder(event.target.value))
   }
   return (
     <div>

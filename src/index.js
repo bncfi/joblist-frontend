@@ -8,6 +8,7 @@ import jobsReducer from './reducers/jobsReducer'
 import orderReducer from './reducers/orderReducer'
 import jobstateReducer from './reducers/jobstateReducer'
 import filteredjobsReducer from './reducers/filteredjobsReducer'
+import ThunkMiddleware from 'redux-thunk'
 
 const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ const store = configureStore({
     jobState: jobstateReducer,
     filteredJobs: filteredjobsReducer,
   },
+  middleware: [ThunkMiddleware],
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'))

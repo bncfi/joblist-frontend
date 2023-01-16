@@ -1,26 +1,14 @@
 import ReactPaginate from 'react-paginate'
 import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import Job from './Job'
-import Jobsliststyles from './Jobslist.module.css'
+import Paginationstyles from './Paginatedjobs.module.css'
+import Paginatedslice from './Paginatedslice'
 
-const Paginatedjobs = ({ itemsPerPage, setJobState }) => {
+const Paginatedjobs = ({ itemsPerPage }) => {
   const [currentJobs, setcurrentJobs] = useState(null)
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
-
   const filteredJobs = useSelector((state) => state.filteredJobs)
-
-  const Jobs = ({ currentJobs }) => {
-    return (
-      <>
-        {currentJobs &&
-          currentJobs.map((item) => (
-            <Job key={item.id} jobinfo={item} setJobState={setJobState} />
-          ))}
-      </>
-    )
-  }
 
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage
@@ -35,7 +23,7 @@ const Paginatedjobs = ({ itemsPerPage, setJobState }) => {
 
   return (
     <>
-      <Jobs currentJobs={currentJobs} />
+      <Paginatedslice currentJobs={currentJobs} />
       <ReactPaginate
         breakLabel="..."
         nextLabel="&raquo;"
@@ -44,9 +32,9 @@ const Paginatedjobs = ({ itemsPerPage, setJobState }) => {
         pageCount={pageCount}
         previousLabel="&laquo;"
         renderOnZeroPageCount={null}
-        activeClassName={Jobsliststyles.paginationActive}
-        previousLinkClassName={Jobsliststyles.paginationLinks}
-        nextLinkClassName={Jobsliststyles.paginationLinks}
+        activeClassName={Paginationstyles.paginationActive}
+        previousLinkClassName={Paginationstyles.paginationLinks}
+        nextLinkClassName={Paginationstyles.paginationLinks}
       />
     </>
   )

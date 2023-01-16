@@ -1,6 +1,11 @@
 import Jobdetailstyles from './Jobdetails.module.css'
+import { setJobState } from '../reducers/jobstateReducer'
+import { useDispatch, useSelector } from 'react-redux'
 
-const Jobdetails = ({ jobState, setJobState }) => {
+const Jobdetails = (/*{ jobState, setJobState }*/) => {
+  const dispatch = useDispatch()
+  const jobState = useSelector((state) => state.jobState)
+
   const descriptionParse = (description) => {
     return description.split(/\n+/).map((newString, index) => (
       <p key={index}>
@@ -11,7 +16,7 @@ const Jobdetails = ({ jobState, setJobState }) => {
   }
 
   const closeViewHandle = () => {
-    setJobState(false)
+    dispatch(setJobState(false))
   }
 
   return (
