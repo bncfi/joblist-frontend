@@ -8,7 +8,9 @@ const Jobslist = () => {
   return (
     <div className={Jobsliststyles.container}>
       <h2>Haulla löytyi {filteredJobs.length} tulosta.</h2>
-      <Paginatedjobs itemsPerPage={15} />
+      <div id="joblist">
+        <Paginatedjobs itemsPerPage={15} />
+      </div>
     </div>
   )
 }

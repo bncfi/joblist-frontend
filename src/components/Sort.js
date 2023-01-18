@@ -21,6 +21,7 @@ const Sort = () => {
   return (
     <div>
       <button
+        id="newestbutton"
         className={
           order === 'newest'
             ? Sortstyle.buttonOrderActive
@@ -32,6 +33,7 @@ const Sort = () => {
         Uusin ensin
       </button>
       <button
+        id="oldestbutton"
         className={
           order === 'oldest'
             ? Sortstyle.buttonOrderActive

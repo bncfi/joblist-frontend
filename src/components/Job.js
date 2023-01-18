@@ -6,11 +6,7 @@ const Job = ({ jobinfo }) => {
   const dispatch = useDispatch()
 
   const dateParser = (dateString) => {
-    const dateWithDash = dateString.split(' ', 1)
-    const dateWithoutDash = dateWithDash[0].split('-')
-    return (
-      dateWithoutDash[2] + '.' + dateWithoutDash[1] + '.' + dateWithoutDash[0]
-    )
+    return new Intl.DateTimeFormat('fi-FI').format(new Date(dateString))
   }
 
   const jobDetailsHandle = (jobDetails) => {

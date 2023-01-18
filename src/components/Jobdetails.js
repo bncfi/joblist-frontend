@@ -2,7 +2,7 @@ import Jobdetailstyles from './Jobdetails.module.css'
 import { setJobState } from '../reducers/jobstateReducer'
 import { useDispatch, useSelector } from 'react-redux'
 
-const Jobdetails = (/*{ jobState, setJobState }*/) => {
+const Jobdetails = () => {
   const dispatch = useDispatch()
   const jobState = useSelector((state) => state.jobState)
 

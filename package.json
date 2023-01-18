@@ -22,7 +22,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -p3001 --watch jobs.json"
+    "server": "json-server -p3001 --watch jobs.json",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "cypress": "^12.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "json-server": "^0.17.0"
   }
 }
