@@ -3,14 +3,17 @@ import { useState } from 'react'
 import { setFilteredJobs } from '../reducers/filteredjobsReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { setOrder } from '../reducers/orderReducer'
+import { setCurrentPage } from '../reducers/paginationPagestate'
+import { setItemOffset } from '../reducers/paginationItemOffset'
 
 const Jobfilter = () => {
+  const jobs = useSelector((state) => state.jobs)
+  const dispatch = useDispatch()
+
   const [searchTerms, setSearchTerms] = useState({
     searchword: null,
     location: null,
   })
-  const jobs = useSelector((state) => state.jobs)
-  const dispatch = useDispatch()
 
   const locationFilter = (job) => {
     if (searchTerms.location) {
@@ -35,6 +38,9 @@ const Jobfilter = () => {
 
   const handleFilter = (event) => {
     event.preventDefault()
+    //These are called to reset the Pagination settings
+    dispatch(setCurrentPage(0))
+    dispatch(setItemOffset(0))
 
     dispatch(
       setFilteredJobs(jobs.filter(searchwordFilter).filter(locationFilter))

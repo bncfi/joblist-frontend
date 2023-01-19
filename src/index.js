@@ -9,6 +9,10 @@ import orderReducer from './reducers/orderReducer'
 import jobstateReducer from './reducers/jobstateReducer'
 import filteredjobsReducer from './reducers/filteredjobsReducer'
 import ThunkMiddleware from 'redux-thunk'
+import paginationCurrentReducer from './reducers/paginationCurrentReducer'
+import paginationPageState from './reducers/paginationPagestate'
+import paginationItemOffset from './reducers/paginationItemOffset'
+import paginationPageCount from './reducers/paginationPagecount'
 
 const store = configureStore({
   reducer: {
@@ -16,6 +20,10 @@ const store = configureStore({
     order: orderReducer,
     jobState: jobstateReducer,
     filteredJobs: filteredjobsReducer,
+    currentJobs: paginationCurrentReducer,
+    currentPage: paginationPageState,
+    itemOffset: paginationItemOffset,
+    pageCount: paginationPageCount,
   },
   middleware: [ThunkMiddleware],
 })
