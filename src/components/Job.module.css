@@ -11,8 +11,8 @@
   }
 .jobDiv:hover {
     background-color: var(--color-gray-6);
-    border-left: 0.3vw solid var(--color-turquoise-4);
-    margin-left: -0.3vw;
+    border-left: 3px solid var(--color-turquoise-4);
+    margin-left: -3px;
 }
 
 .jobHeading {
