@@ -1,3 +1,5 @@
+Frontend app työpaikkailmoitusten listaukseen, hakuun ja järjestämiseen.
+
 ---
 
 Käyttöohjeet:
