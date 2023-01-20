@@ -39,13 +39,6 @@ h1 {
   flex: 1;
 }
 
-.duunitori-logo {
-  background-image: url('https://duunitori.imgix.net/static/web/images/logo-duunitori-rgb-horisontal-inverse.svg?auto=format');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 80%;
-}
-
 .App-headerblock-filter {
   flex-basis: 80%;
   flex: 8;
