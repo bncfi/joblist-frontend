@@ -1,4 +1,4 @@
-Frontend app työpaikkailmoitusten listaukseen, hakuun ja järjestämiseen.
+Frontend rekrytehtävä työpaikkailmoitusten listaukseen, hakuun ja järjestämiseen.
 
 ---
 
