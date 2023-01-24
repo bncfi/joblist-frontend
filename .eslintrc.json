@@ -1,7 +1,17 @@
 {
-  "extends": ["react-app", "shared-config"],
-  "env": {
-    "jest/globals": true,
-    "cypress/globals": true
+  "extends": [
+    "plugin:cypress/recommended",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off"
   }
 }
