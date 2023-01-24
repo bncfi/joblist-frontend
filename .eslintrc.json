@@ -1,5 +1,5 @@
 {
-  "extends": ["react-app", "shared-config"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "env": {
     "jest/globals": true,
     "cypress/globals": true
