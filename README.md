@@ -15,6 +15,7 @@ Mene kloonattuun projektikansioon komennolla:
 Vaihda branch ja asenna npm riippuvuudet komennoilla:
 
 **git checkout redux-state**
+
 **npm install**
 
 Käynnistä kehitysaikainen json-serveri komennolla:
