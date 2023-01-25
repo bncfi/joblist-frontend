@@ -2,10 +2,9 @@
 
 body {
   margin: 0.5vw;
-  text-align:center;
+  text-align: center;
   background-color: var(--color-gray-5);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
