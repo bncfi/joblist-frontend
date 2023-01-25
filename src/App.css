@@ -29,7 +29,7 @@ h1 {
 
 .App-headerblock {
   min-width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: row;
   align-items: stretch;
 }
@@ -43,5 +43,3 @@ h1 {
   flex-basis: 80%;
   flex: 8;
 }
-
-

@@ -1,4 +1,5 @@
 Frontend rekrtytehtävä työpaikkailmoitusten listaukseen, hakuun ja järjestämiseen.
+Huom. Redux & Cypress -versio branchissa redux-state.
 
 ---
 

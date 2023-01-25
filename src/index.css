@@ -14,7 +14,7 @@
 
   /* Colors */
   --color-black-1: #222222;
-  
+
   --color-gray-1: #333333;
   --color-gray-2: #707070;
   --color-gray-3: #b4b4b5;
@@ -40,7 +40,7 @@
 
 body {
   margin: 0.5vw;
-  text-align:center;
+  text-align: center;
   background-color: var(--color-gray-5);
   font-family: var(--font-family);
   -webkit-font-smoothing: antialiased;
